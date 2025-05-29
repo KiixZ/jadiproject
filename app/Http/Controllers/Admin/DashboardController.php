@@ -35,11 +35,17 @@ class DashboardController extends Controller
             ? (($pendapatanHariIni - $pendapatanMingguLalu) / $pendapatanMingguLalu) * 100 
             : 100;
 
-        // Data pengguna baru hari ini
-        $penggunaBaru = User::whereDate('created_at', Carbon::today())->count();
+        // Data pengguna baru 30 hari terakhir
+        $penggunaBaru = User::whereBetween('created_at', [
+            Carbon::now()->subDays(30)->startOfDay(),
+            Carbon::now()->endOfDay()
+        ])->count();
         
-        // Data pengguna bulan lalu untuk perbandingan
-        $penggunaLalu = User::whereMonth('created_at', Carbon::now()->subMonth()->month)->count();
+        // Data pengguna 30 hari sebelumnya untuk perbandingan
+        $penggunaLalu = User::whereBetween('created_at', [
+            Carbon::now()->subDays(60)->startOfDay(),
+            Carbon::now()->subDays(31)->endOfDay()
+        ])->count();
         
         // Persentase perubahan pengguna
         $persentasePengguna = $penggunaLalu > 0 

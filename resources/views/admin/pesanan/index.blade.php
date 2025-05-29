@@ -103,6 +103,30 @@
                                                         </form>
                                                     @endif
 
+                                                    @if ($order->payment_method === 'midtrans')
+                                                        <form action="{{ route('admin.pesanan.updateStatus', $order->id) }}"
+                                                            method="POST" id="statusForm-{{ $order->id }}">
+                                                            @csrf
+                                                            @method('PUT')
+                                                            <select name="status"
+                                                                class="form-select form-select-sm status-select status-{{ $order->status }}"
+                                                                onchange="if(confirm('Apakah Anda yakin ingin mengubah status pesanan ini?')) { this.form.submit(); }">
+                                                                <option value="confirmed"
+                                                                    {{ $order->status === 'confirmed' ? 'selected' : '' }}
+                                                                    class="status-bg-confirmed">Menunggu Konfirmasi Penjual</option>
+                                                                <option value="processing"
+                                                                    {{ $order->status === 'processing' ? 'selected' : '' }}
+                                                                    class="status-bg-processing">Sedang Diproses</option>
+                                                                <option value="delivered"
+                                                                    {{ $order->status === 'delivered' ? 'selected' : '' }}
+                                                                    class="status-bg-delivery">Dikirim</option>
+                                                                <option value="completed"
+                                                                    {{ $order->status === 'completed' ? 'selected' : '' }}
+                                                                    class="status-bg-completed">Selesai</option>
+                                                            </select>
+                                                        </form>
+                                                    @endif
+
                                                     {{-- @if($order->payment_method === 'transfer' && $order->status === 'pending')
                                                         <div class="d-flex gap-2">
                                                             <!-- Tombol Lihat Bukti Transfer -->
