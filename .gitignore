@@ -25,4 +25,5 @@ Homestead.json
 /storage/app
 /storage/*
 # windsurf rules
-.windsurfrules
+.cursorrules
+.cursor
