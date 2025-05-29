@@ -134,11 +134,24 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item d-flex align-items-center">
-                    <a href="#" class="nav-link text-body font-weight-bold px-0">
+                <li class="nav-item d-flex align-items-center" x-data="{ open: false }" @click.away="open = false">
+                    <a href="javascript:;" class="nav-link text-body font-weight-bold px-0 d-flex align-items-center"
+                       @click="open = !open">
                         <img src="{{ asset('storage/' . auth()->user()->photo) }}" alt="Admin Image"
                             class="avatar avatar-sm">
+                        <span class="ms-2 d-none d-md-inline">{{ auth()->user()->name }}</span>
+                        <i class="bi bi-chevron-down ms-1"></i>
                     </a>
+                    <div x-show="open" x-cloak
+                         class="profile-dropdown mt-2"
+                         style="min-width: 150px; position: absolute; right: 0; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.15); z-index:9999;">
+                        <form action="{{ route('admin.logout') }}" method="POST" class="mb-0">
+                            @csrf
+                            <button type="submit" class="dropdown-item" style="width:100%;text-align:left;">
+                                <i class="bi bi-box-arrow-right me-2"></i> Logout
+                            </button>
+                        </form>
+                    </div>
                 </li>
             </ul>
         </div>

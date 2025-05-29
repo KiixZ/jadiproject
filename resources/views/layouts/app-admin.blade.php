@@ -194,7 +194,8 @@
 
     <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="{{ asset('material-dashboard/assets/js/material-dashboard.min.js') }}"></script>
-
+    <!-- Tambahkan Alpine.js agar dropdown profile bisa interaktif -->
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
 </body>
 
