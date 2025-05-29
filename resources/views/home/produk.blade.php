@@ -110,7 +110,7 @@
             const startTime = performance.now();
             try {
                 // Try to load a small image to test connection
-                const response = await fetch('{{ asset('storage/' . ($appSettings['favicon'] ?? 'default-favicon.ico')) }}');
+                const response = await fetch('{{ asset('storage/default-favicon.ico') }}');
                 const endTime = performance.now();
                 return endTime - startTime;
             } catch (error) {

@@ -54,8 +54,7 @@ if ($hour >= 3 && $hour < 11) { $greeting='Selamat Pagi' ; $icon='bi bi-brightne
                             @if(auth()->check())
                             {{ $message }}
                             @else
-                            Selamat datang di <span class="text-custom-secondary">{{ substr($appSettings['app_name'], 0,
-                                -4) }}</span><span class="text-custom">{{ substr($appSettings['app_name'], -4) }}</span>
+                            Selamat datang di <span class="text-custom-secondary">Alfaza</span><span class="text-custom">Grilled</span>
                             @endif
                         </p>
                     </div>

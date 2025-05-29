@@ -23,100 +23,31 @@
 <div class="relative overflow-hidden bg-gray-50 mt-16 md:mt-20 my-2 hidden" id="banner-slider">
     <div class="swiper bannerSwiper">
         <div class="swiper-wrapper">
-            <!-- Slide 1 -->
-            <div class="swiper-slide h-[400px] md:h-[500px]">
-                <div class="container mx-auto px-4 h-full">
-                    <div class="flex flex-col md:flex-row items-center justify-between h-full py-8 md:py-12">
-                        <div class="w-full md:w-1/2 space-y-4 text-center md:text-left mb-4 md:mb-0">
-                            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">Flash Sale!</h2>
-                            <p class="text-sm sm:text-base md:text-lg text-gray-600">
-                                Diskon hingga <span class="font-bold text-custom">70%</span> untuk produk tertentu.
-                                Jangan lewatkan!
-                            </p>
-                            <a href="#flash-sale"
-                                class="inline-block px-6 py-3 text-sm sm:text-base bg-custom text-white font-semibold rounded-lg hover:bg-red-700 transition-colors">
-                                Belanja Sekarang
-                            </a>
-                        </div>
-                        <div class="w-full md:w-1/2 h-48 md:h-80 relative">
-                            <picture>
-                                <img src="{{ asset('images/banners/laptop alienware.webp') }}" width="800" height="600"
-                                    alt="Flash Sale" loading="eager"
-                                    class="absolute inset-0 w-full h-full object-contain">
-                            </picture>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="swiper-slide h-[400px] md:h-[500px]">
-                <div class="container mx-auto px-4 h-full">
-                    <div class="flex flex-col md:flex-row items-center justify-between h-full py-8 md:py-12">
-                        <div class="w-full md:w-1/2 space-y-4 text-center md:text-left mb-4 md:mb-0">
-                            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">Produk Pilihan Terbaik
-                            </h2>
-                            <p class="text-sm sm:text-base md:text-lg text-gray-600">
-                                Temukan berbagai produk berkualitas dengan harga terbaik untuk Anda.
-                            </p>
-                            <a href="#recommended"
-                                class="inline-block px-6 py-3 text-sm sm:text-base bg-custom text-white font-semibold rounded-lg hover:bg-red-700 transition-colors">
-                                Belanja Sekarang
-                            </a>
-                        </div>
-                        <div class="w-full md:w-1/2 h-48 md:h-80 relative">
-                            <img src="{{ asset('images/banners/banner-kecap-bango.png') }}" width="800" height="600"
-                                class="absolute inset-0 w-full h-full object-contain" alt="Produk Pilihan">
+            {{--
+            @foreach($latestProducts->take(3) as $produk)
+                <div class="swiper-slide h-[400px] md:h-[500px]">
+                    <div class="container mx-auto px-4 h-full">
+                        <div class="flex flex-col md:flex-row items-center justify-between h-full py-8 md:py-12">
+                            <div class="w-full md:w-1/2 space-y-4 text-center md:text-left mb-4 md:mb-0">
+                                <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">{{ $produk->nama_produk }}</h2>
+                                <p class="text-sm sm:text-base md:text-lg text-gray-600 line-clamp-3">
+                                    {{ Str::limit($produk->deskripsi, 120) }}
+                                </p>
+                                <a href="{{ route('produk.detail', $produk->slug) }}"
+                                    class="inline-block px-6 py-3 text-sm sm:text-base bg-custom text-white font-semibold rounded-lg hover:bg-red-700 transition-colors">
+                                    Lihat Produk
+                                </a>
+                            </div>
+                            <div class="w-full md:w-1/2 h-48 md:h-80 relative flex items-center justify-center">
+                                <img src="{{ $produk->gambar ? asset('storage/' . $produk->gambar) : asset('storage/user.svg') }}"
+                                    width="800" height="600"
+                                    class="absolute inset-0 w-full h-full object-contain rounded-lg" alt="{{ $produk->nama_produk }}">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="swiper-slide h-[400px] md:h-[500px]">
-                <div class="container mx-auto px-4 h-full">
-                    <div class="flex flex-col md:flex-row items-center justify-between h-full py-8 md:py-12">
-                        <div class="w-full md:w-1/2 space-y-4 text-center md:text-left mb-4 md:mb-0">
-                            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">Produk Pilihan Terbaik
-                            </h2>
-                            <p class="text-sm sm:text-base md:text-lg text-gray-600">
-                                Temukan berbagai produk berkualitas dengan harga terbaik untuk Anda.
-                            </p>
-                            <a href="#recommended"
-                                class="inline-block px-6 py-3 text-sm sm:text-base bg-custom text-white font-semibold rounded-lg hover:bg-red-700 transition-colors">
-                                Belanja Sekarang
-                            </a>
-                        </div>
-                        <div class="w-full md:w-1/2 h-48 md:h-80 relative">
-                            <img src="{{ asset('images/banners/buah apel.webp') }}" width="800" height="600"
-                                class="absolute inset-0 w-full h-full object-contain" alt="Produk Pilihan">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Slide 4 -->
-            <div class="swiper-slide h-[400px] md:h-[500px]">
-                <div class="container mx-auto px-4 h-full">
-                    <div class="flex flex-col md:flex-row items-center justify-between h-full py-8 md:py-12">
-                        <div class="w-full md:w-1/2 space-y-4 text-center md:text-left mb-4 md:mb-0">
-                            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800">Produk Pilihan Terbaik
-                            </h2>
-                            <p class="text-sm sm:text-base md:text-lg text-gray-600">
-                                Temukan berbagai produk berkualitas dengan harga terbaik untuk Anda.
-                            </p>
-                            <a href="#recommended"
-                                class="inline-block px-6 py-3 text-sm sm:text-base bg-custom text-white font-semibold rounded-lg hover:bg-red-700 transition-colors">
-                                Belanja Sekarang
-                            </a>
-                        </div>
-                        <div class="w-full md:w-1/2 h-48 md:h-80 relative">
-                            <img src="{{ asset('images/banners/Yukinoshita_Yukino.webp') }}" width="800" height="600"
-                                class="absolute inset-0 w-full h-full object-contain" alt="Produk Pilihan">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+            --}}
         </div>
 
         <!-- Navigation -->

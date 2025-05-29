@@ -176,9 +176,7 @@ pokoknya!',
 <section id="testimonials" class="bg-gray-50 py-12 px-4 md:px-6">
     <div class="container mx-auto">
         <h3 class="text-lg md:text-3xl font-bold text-center mb-8">
-            Apa kata mereka tentang <span class="text-custom-secondary">{{
-                substr($appSettings['app_name'], 0, -4)
-                }}</span><span class="text-custom">{{ substr($appSettings['app_name'], -4) }}</span> ?
+            Apa kata mereka tentang <span class="text-custom-secondary">Alfaza</span><span class="text-custom">Grilled</span> ?
         </h3>
 
         <div class="relative max-w-[1350px] mx-auto overflow-hidden">

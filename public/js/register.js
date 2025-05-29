@@ -756,10 +756,9 @@ $(document).ready(function () {
                 return;
             }
 
-            stepMenuTwo.removeClass("active");
-            formSubmitBtn.text("Daftar");
-            //! End Step Menu Kedua
-
+            // Submit form setelah validasi sukses
+            $("form")[0].submit();
+            return;
         }
         return false; // Prevent default form submission
     });

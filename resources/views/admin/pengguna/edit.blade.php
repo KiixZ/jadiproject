@@ -58,9 +58,6 @@
                                                     {{ $pengguna->role == 'Administrator' ? 'selected' : '' }}>
                                                     Administrator
                                                 </option>
-                                                <option value="Kasir" {{ $pengguna->role == 'Kasir' ? 'selected' : '' }}>
-                                                    Kasir
-                                                </option>
                                             </select>
                                         </div>
                                     </div>

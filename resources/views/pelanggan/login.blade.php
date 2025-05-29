@@ -23,7 +23,7 @@
                     <div class="flex justify-center items-center mb-4">
                         <img src="{{ asset('storage/' . ($appSettings['app_logo'] ?? 'default-logo.png')) }}" alt="{{ $appSettings['app_name'] ?? 'App Logo' }}" class=" h-24 w-auto">
                     </div>
-                    <p class="text-lg font-semibold">Cepat, Lengkap, <span class="text-[#102863]">Okee</span><span class="text-[#D32F2F]">Dins</span> Solusinya!</p>
+                    <p class="text-lg font-semibold">Cepat, Lengkap, <span class="text-[#102863]">Alfaza</span><span class="text-[#D32F2F]">Grilled</span> Solusinya!</p>
                 </div>
             </div>
 

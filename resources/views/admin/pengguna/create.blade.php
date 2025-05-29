@@ -41,7 +41,6 @@
                                             <option value="">Pilih Role Pengguna</option>
                                             <option value="Pelanggan">Pelanggan</option>
                                             <option value="Administrator">Administrator</option>
-                                            <option value="Kasir">Kasir</option>
                                         </select>
                                     </div>
                                 </div>

@@ -2,8 +2,7 @@
 <div class="bg-gradient-to-b from-gray-50 to-white py-14 overflow-hidden">
     <div class="container mx-auto px-4 text-center">
         <h1 class="text-3xl md:text-4xl font-bold mb-6 animate-fade-in text-custom-secondary">
-            {{ substr($appSettings['app_name'], 0, -4) }}<span class="text-custom">{{ substr($appSettings['app_name'],
-                -4) }}</span>
+            Alfaza<span class="text-custom">Grilled</span>
         </h1>
         <div class="space-y-3 max-w-2xl mx-auto relative min-h-[10px] md:min-h-[0px]">
             <div class="tagline-slider">
@@ -11,16 +10,12 @@
                     <p class="text-2xl font-semibold text-gray-800">Belanja Cerdas, Harga Pas!</p>
                 </div>
                 <div class="tagline-slide opacity-0 transition-all duration-500 absolute w-full px-4">
-                    <p class="text-xl text-gray-700">Cepat, Lengkap, <span class="text-custom-secondary">{{
-                            substr($appSettings['app_name'], 0, -4)
-                            }}</span><span class="text-custom">{{ substr($appSettings['app_name'], -4) }}</span>
+                    <p class="text-xl text-gray-700">Cepat, Lengkap, <span class="text-custom-secondary">Alfaza</span><span class="text-custom">Grilled</span>
                         Solusinya!</p>
                 </div>
                 <div class="tagline-slide opacity-0 transition-all duration-500 absolute w-full px-4">
                     <p class="text-lg italic text-custom">From Cart to Heart - Only at <span
-                            class="text-custom-secondary">{{
-                            substr($appSettings['app_name'], 0, -4) }}</span><span class="text-custom">{{
-                            substr($appSettings['app_name'], -4) }}</span>
+                            class="text-custom-secondary">Alfaza</span><span class="text-custom">Grilled</span>
                     </p>
                 </div>
                 <div class="tagline-slide opacity-0 transition-all duration-500 absolute w-full px-4">

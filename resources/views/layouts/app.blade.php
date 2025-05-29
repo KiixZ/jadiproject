@@ -16,9 +16,9 @@
     </title>
 
     <!-- Favicon -->
-    <link rel="icon" href="{{ asset('storage/' . ($appSettings['favicon'] ?? 'default-favicon.ico')) }}"
+    <link rel="icon" href="{{ asset('storage/default-favicon.ico') }}"
         type="image/x-icon">
-    <link rel="shortcut icon" href="{{ asset('storage/' . ($appSettings['favicon'] ?? 'default-favicon.ico')) }}"
+    <link rel="shortcut icon" href="{{ asset('storage/default-favicon.ico') }}"
         type="image/x-icon">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.3.1/dist/driver.css"/>

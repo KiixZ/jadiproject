@@ -4,8 +4,8 @@
         <div class="flex items-center justify-between h-16">
             <!-- Logo -->
             <a href="{{ route('home.index') }}" class="flex items-center">
-                <img src="{{ asset('images/alfaza.png' . ($appSettings['app_logo'] ?? null) ?: '/alfaza.png') }}"
-                    alt="{{ $appSettings['app_name'] ?? 'App Logo' }}" class="h-16 md:h-20 w-auto">
+                <img src="{{ asset('images/alfaza.png') }}"
+                    alt="AlfazaGrilled" class="h-16 md:h-20 w-auto">
             </a>
 
             <!-- Search Bar (Desktop) -->

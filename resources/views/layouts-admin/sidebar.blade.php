@@ -5,9 +5,9 @@
         <i class="fas fa-times p-3 cursor-pointer text-dark opacity-5 position-absolute end-0 top-0 d-none d-xl-none"
             aria-hidden="true" id="iconSidenav"></i>
         <a class="navbar-brand px-4 py-3 m-0" href=" {{ route('admin.dashboard') }} " target="_blank">
-            <img src="{{ asset('/images/' . ($appSettings['app_logo'] ?? 'alfaza.png')) }}"
-                class="navbar-brand-img" alt="{{ $appSettings['app_name'] ?? 'main_logo' }}">
-            <span class="ms-1 text-sm text-dark">{{ $appSettings['app_name'] }}</span>
+            <img src="{{ asset('/images/alfaza.png') }}"
+                class="navbar-brand-img" alt="AlfazaGrilled">
+            <span class="ms-1 text-sm text-dark">AlfazaGrilled</span>
         </a>
     </div>
     <hr class="horizontal dark mt-0 mb-2">
@@ -108,20 +108,6 @@
                     href="{{ route('admin.vouchers.index') }}">
                     <i class="material-symbols-rounded opacity-5">redeem</i>
                     <span class="nav-link-text ms-1">Voucher</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Request::routeIs('admin.settings.index') ? 'active bg-gradient-dark text-white' : 'text-dark' }}"
-                    href="{{ route('admin.settings.index') }}">
-                    <i class="material-symbols-rounded opacity-5">settings</i>
-                    <span class="nav-link-text ms-1">Pengaturan Sistem</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link {{ Request::routeIs('admin.pengguna.profile') ? 'active bg-gradient-dark text-white' : 'text-dark' }}"
-                    href="{{ route('admin.pengguna.profile') }}">
-                    <i class="material-symbols-rounded opacity-5">person</i>
-                    <span class="nav-link-text ms-1">Profile Administrator</span>
                 </a>
             </li>
             <li class="nav-item">

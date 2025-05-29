@@ -7,9 +7,7 @@
         <!-- Hero Section -->
         <div class="text-center mb-16">
             <h1 class="text-4xl font-bold text-gray-900 mb-4">Tentang Kami</h1>
-            <p class="text-lg text-gray-600">Mengenal lebih dekat <span class="text-custom-secondary font-medium">{{
-                    substr($appSettings['app_name'], 0, -4) }}</span><span class="text-custom font-medium">{{
-                    substr($appSettings['app_name'], -4) }}</span></p>
+            <p class="text-lg text-gray-600">Mengenal lebih dekat <span class="text-custom-secondary font-medium">Alfaza</span><span class="text-custom font-medium">Grilled</span></p>
         </div>
 
         <!-- About Content -->
@@ -66,7 +64,7 @@
                     loading="lazy"
                     allowfullscreen
                     referrerpolicy="no-referrer-when-downgrade"
-                    src="https://www.google.com/maps/embed/v1/place?key={{ config('services.google_maps.api_key') }}&q=Warung+Makan+Kharisma,+Jl.+Halmadera,+Mintaragen,+Kota+Tegal,+Jawa+Tengah">
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.313492415425!2d109.1457562!3d-6.852975600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6fb79c0e41f47b%3A0x8645589da09dd1c!2sWarung%20Makan%20Kharisma!5e0!3m2!1sid!2sid!4v1748546058570!5m2!1sid!2sid">
                 </iframe>
             </div>
         </div>
