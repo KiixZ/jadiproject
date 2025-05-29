@@ -1,0 +1,370 @@
+:root {
+    /* Warna utama */
+    --marketColorPrimary: #D32F2F;
+    /* Warna utama II*/
+    --marketColorPrimaryII: #C62828;
+
+    /* Warna sekunder */
+    --marketColorSecondary: #007bff;
+    /* Warna sekunder II*/
+    --marketColorSecondaryII: #0056b3;
+
+    /* Warna teks (putih) */
+    --marketColorThirty: #fff;
+
+    /* Radio button custom properties */
+    --radio-checked-bg: var(--marketColorPrimary);
+    --radio-border: var(--marketColorPrimary);
+}
+
+
+
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* TULISAN CUSTOM UNTUK WARNA LOGO, HARGA PRODUK */
+.text-custom {
+    color: var(--marketColorPrimary);
+}
+
+
+/* Custom radio button styles with high specificity */
+.radio-custom:checked {
+    background-color: var(--marketColorPrimary) !important;
+    border-color: var(--marketColorPrimary) !important;
+}
+
+
+/* Custom checkbox checked color */
+.checkbox-custom:checked {
+    background-color: var(--marketColorPrimary) !important;
+    border-color: var(--marketColorPrimary) !important;
+}
+
+
+/* Warna Background Badges or Background suatu objek*/
+.bg-custom {
+    background-color: var(--marketColorPrimary) !important;
+}
+
+
+.btn-custom {
+    background-color: var(--marketColorPrimary) !important;
+    border-color: var(--marketColorPrimary) !important;
+    color: var(--marketColorThirty) !important;
+}
+
+
+/* .btn-secondary {
+    background-color: var(--marketColorSecondary) !important;
+    border-color: var(--marketColorSecondary) !important;
+    color: var(--marketColorThirty) !important;
+} */
+
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom:active {
+    background-color: var(--marketColorPrimaryII) !important;
+    border-color: var(--marketColorThirty) !important;
+    color: var(--marketColorThirty) !important;
+}
+
+
+/* Untuk tombol btn-outline-primary */
+.btn-outline-custom {
+    color: var(--marketColorPrimary) !important;
+    border-color: var(--marketColorPrimary) !important;
+}
+
+.btn-outline-custom:hover,
+.btn-outline-custom:focus,
+.btn-outline-custom:active {
+    background-color: var(--marketColorPrimaryII) !important;
+    border-color: var(--marketColorPrimaryII) !important;
+    color: var(--marketColorThirty) !important;
+}
+
+
+/* .bg-primary {
+    background-color: var(--marketColorPrimary) !important;
+} */
+
+
+/* Custom Swiper Pagination Bullets */
+.swiper-pagination-bullet {
+    background-color: var(--marketColorPrimary) !important;
+    opacity: 0.7;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: var(--marketColorPrimary) !important;
+    opacity: 1;
+}
+
+
+/* produk card & img konsisten */
+.product-card {
+    height: auto;
+    min-height: 280px;
+    margin-bottom: 10px;
+    /* Memberikan jarak antar card */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid var(--marketColorThirty);
+    /* Border tipis dengan warna abu-abu */
+    border-radius: 8px;
+    /* Sudut membulat */
+    transition: all 0.3s ease;
+    /* Transisi halus saat hover */
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.295) !important;
+    /* Menambahkan bayangan pada border */
+}
+
+.product-card .card-body {
+    padding: 0.50rem;
+    /* Mengurangi padding di mobile */
+}
+
+@media (max-width: 576px) {
+    .product-card .card-text.text-custom {
+        font-size: 0.9rem;
+    }
+
+    .product-card .card-text.text-muted {
+        font-size: 0.7rem;
+    }
+}
+
+.product-card:hover {
+    /* Warna border berubah saat hover */
+    border-color: var(--marketColorThirty);
+
+    /* Efek bayangan lebih sedikit jelas saat hover */
+    box-shadow: 4px 4px 3px rgba(0, 0, 0, 0.5) !important;
+}
+
+.product-card .card-body {
+    flex-grow: 1;
+}
+
+/* Desktop */
+.product-card .card-img-top {
+    object-fit: cover;
+    height: 200px;
+    /* Tinggi yang tetap */
+    max-height: 200px;
+    width: 100%;
+    border-radius: 8px;
+    /* Opsional: memberi sudut tumpul */
+}
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+    .product-card .card-img-top {
+        object-fit: cover;
+        height: 150px;
+        /* Tinggi untuk layar kecil */
+        max-height: 150px;
+    }
+}
+
+/* Tablet */
+@media only screen and (max-width: 768px) {
+    .product-card .card-img-top {
+        object-fit: cover;
+        height: 180px;
+        /* Tinggi untuk layar sedang */
+        max-height: 180px;
+    }
+}
+
+/* Base card title styles */
+.product-card .card-title {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    word-break: break-word;
+}
+
+/* Mobile styles (under 768px) */
+@media (max-width: 767.98px) {
+    .product-card .card-title {
+        -webkit-line-clamp: 1;
+        /* Shows only 1 line with ... */
+        max-height: 1.5em;
+        /* Approximately one line of text */
+    }
+}
+
+/* Desktop styles (768px and above) */
+@media (min-width: 768px) {
+    .product-card .card-title {
+        -webkit-line-clamp: 2;
+        /* Shows 2 lines with ... */
+        max-height: 3em;
+        /* Approximately two lines of text */
+        line-height: 1.5;
+    }
+}
+
+/* Tombol Wishlist */
+.wishlist-btn {
+    border: none;
+    background-color: var(--marketColorThirty);
+    color: var(--marketColorPrimary);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.wishlist-btn:hover {
+    background-color: var(--marketColorPrimary);
+    color: var(--marketColorThirty);
+}
+
+/* end tombol wishlist */
+
+/* Start Custom Banner Btn Clik Hover */
+.btn-hover-warning:hover {
+    background-color: var(--bs-primary);
+    /* Background jadi warna warning */
+    color: var(--marketColorThirty);
+    /* Teks jadi putih */
+    transition: background-color 0.3s, color 0.3s;
+    /* Efek transisi */
+}
+
+/* End Custom Banner Btn Clik Hover */
+
+
+/* Start Custom Banner Slider Hover */
+/* Hide navigation buttons by default */
+.banner-slider .swiper-button-next,
+.banner-slider .swiper-button-prev {
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+/* Show navigation buttons on banner hover */
+.banner-slider:hover .swiper-button-next,
+.banner-slider:hover .swiper-button-prev {
+    opacity: 1;
+}
+
+/* Optional: Style the navigation buttons */
+.banner-slider .swiper-button-next,
+.banner-slider .swiper-button-prev {
+    width: 40px;
+    height: 40px;
+    background-color: var(--marketColorThirty);
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.banner-slider .swiper-button-next:after,
+.banner-slider .swiper-button-prev:after {
+    font-size: 18px;
+    color: var(--marketColorPrimary);
+}
+
+/* Add translation animation */
+.banner-slider .swiper-button-next {
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+}
+
+.banner-slider .swiper-button-prev {
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
+}
+
+.banner-slider:hover .swiper-button-next {
+    transform: translateX(0);
+}
+
+.banner-slider:hover .swiper-button-prev {
+    transform: translateX(0);
+}
+
+/* Optional: Add hover effect on the buttons themselves */
+.banner-slider .swiper-button-next:hover,
+.banner-slider .swiper-button-prev:hover {
+    background-color: var(--marketColorThirty);
+}
+
+/* End Custom Banner Slider Hover */
+
+/* Start Custom Kategori Slider */
+.kategoriSwiper {
+    padding: 0 35px !important;
+    position: relative;
+}
+
+/* Hide navigation buttons by default */
+.kategoriSwiper .swiper-button-next,
+.kategoriSwiper .swiper-button-prev {
+    opacity: 0;
+    width: 35px;
+    height: 35px;
+    background-color: var(--marketColorThirty);
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Show navigation buttons on slider hover */
+.kategoriSwiper:hover .swiper-button-next,
+.kategoriSwiper:hover .swiper-button-prev {
+    opacity: 1;
+}
+
+.kategoriSwiper .swiper-button-next:after,
+.kategoriSwiper .swiper-button-prev:after {
+    font-size: 15px;
+    color: var(--marketColorPrimary);
+}
+
+/* Add translation animation */
+.kategoriSwiper .swiper-button-next {
+    transform: translateX(20px);
+    transition: all 0.3s ease;
+}
+
+.kategoriSwiper .swiper-button-prev {
+    transform: translateX(-20px);
+    transition: all 0.3s ease;
+}
+
+.kategoriSwiper:hover .swiper-button-next {
+    transform: translateX(0);
+}
+
+.kategoriSwiper:hover .swiper-button-prev {
+    transform: translateX(0);
+}
+
+/* Optional: Add hover effect on the buttons themselves */
+.kategoriSwiper .swiper-button-next:hover,
+.kategoriSwiper .swiper-button-prev:hover {
+    background-color: var(--marketColorThirty);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling untuk slide kategori */
+.kategoriSwiper .swiper-slide {
+    width: auto;
+    transition: transform 0.3s ease;
+}
+
+.kategoriSwiper .swiper-slide:hover {
+    transform: translateY(-2px);
+}
+
+/* End Custom Kategori Slider */
