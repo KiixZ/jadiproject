@@ -28,12 +28,11 @@ return new class extends Migration
             $table->date('tgl_lahir');
             $table->enum('jenis_kelamin', ['Laki-Laki', 'Perempuan']);
             $table->string('telepon', 20);
-            $table->string('makanan_fav', 200);
             $table->string('photo', 255)->nullable();
 
             // Role & Character
             $table->enum('role', ['Pelanggan', 'Administrator'])->nullable();
-            $table->enum('type_char', ['Hero', 'Villain', 'Anti Hero', 'Anti Villain']);
+            // $table->enum('type_char', ['Hero', 'Villain', 'Anti Hero', 'Anti Villain']);
 
             // Security & Authentication
             // $table->boolean('two_factor_enabled')->default(false);

@@ -3,7 +3,7 @@ $testimonials = [
 // 1
 [
 'image' => asset('images/testimonials/susilo.jpg'),
-'quote' => 'OkeeDins sangat membantu saya menemukan produk yang saya butuhkan!',
+'quote' => 'AlfazaGrilled sangat membantu saya menemukan produk yang saya butuhkan!',
 'name' => 'Susilo Hartanto',
 'role' => 'Customer',
 'rating' => 5
@@ -19,7 +19,7 @@ $testimonials = [
 // 3
 [
 'image' => asset('images/user.svg'),
-'quote' => 'OkeeDins smooth banget, gak ribet!',
+'quote' => 'AlfazaGrilled smooth banget, gak ribet!',
 'name' => 'Hafizh',
 'role' => 'Customer',
 'rating' => 5
@@ -35,7 +35,7 @@ $testimonials = [
 // 5
 [
 'image' => asset('images/testimonials/parida.jpg'),
-'quote' => 'OkeeDins bagus sudah gw coba, gw coba bikin akun terus gw coba checkout barang mantap',
+'quote' => 'AlfazaGrilled bagus sudah gw coba, gw coba bikin akun terus gw coba checkout barang mantap',
 'name' => 'Parida Rahmawati',
 'role' => 'Customer',
 'rating' => 5
@@ -43,7 +43,7 @@ $testimonials = [
 // 6
 [
 'image' => asset('images/testimonials/team-1.jpg'),
-'quote' => 'OkeeDins top banget! Setiap interaksi bikin saya ngerasa dihargai dan pastinya puas banget',
+'quote' => 'AlfazaGrilled top banget! Setiap interaksi bikin saya ngerasa dihargai dan pastinya puas banget',
 'name' => 'Mei Chan',
 'role' => 'Customer',
 'rating' => 5
@@ -59,7 +59,7 @@ $testimonials = [
 // 8
 [
 'image' => asset('images/testimonials/Adolf-Hitler-1933.webp'),
-'quote' => 'OkeeDins sangat membantu saya menemukan produk yang saya butuhkan!',
+'quote' => 'AlfazaGrilled sangat membantu saya menemukan produk yang saya butuhkan!',
 'name' => 'Adolf Hitler',
 'role' => 'Customer',
 'rating' => 5
@@ -107,7 +107,7 @@ $testimonials = [
 // 14
 [
 'image' => asset('images/user.svg'),
-'quote' => 'Wiih, OkeeDins keren kayak shoppe gitu, keren sekali developernya effort banget, idenya juga bagus, mantap
+'quote' => 'Wiih, AlfazaGrilled keren kayak shoppe gitu, keren sekali developernya effort banget, idenya juga bagus, mantap
 pokoknya!',
 'name' => 'Fitriani',
 'role' => 'Customer',
@@ -132,7 +132,7 @@ pokoknya!',
 // 17
 [
 'image' => asset('images/user.svg'),
-'quote' => 'OkeeDins punya banyak pilihan produk dengan harga yang kompetitif. Recommended banget!',
+'quote' => 'AlfazaGrilled punya banyak pilihan produk dengan harga yang kompetitif. Recommended banget!',
 'name' => 'Muhammad Maulidi',
 'role' => 'Customer',
 'rating' => 5
@@ -156,7 +156,7 @@ pokoknya!',
 // 20
 [
 'image' => asset('images/user.svg'),
-'quote' => 'Belanja di OkeeDins gampang banget! Prosesnya cepat, barangnya juga sesuai deskripsi.',
+'quote' => 'Belanja di AlfazaGrilled gampang banget! Prosesnya cepat, barangnya juga sesuai deskripsi.',
 'name' => 'Gusti Randa',
 'role' => 'Customer',
 'rating' => 5

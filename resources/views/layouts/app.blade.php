@@ -9,9 +9,9 @@
     <meta name="turbo-cache-control" content="no-preview">
     <title>
         @hasSection('title')
-            @yield('title') - {{ config('app.name', 'OkeeDins') }}
+            @yield('title') - {{ config('app.name', 'AlfazaGrilled') }}
         @else
-            {{ config('app.name', 'OkeeDins') }}
+            {{ config('app.name', 'AlfazaGrilled') }}
         @endif
     </title>
 

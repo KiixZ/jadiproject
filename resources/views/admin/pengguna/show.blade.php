@@ -18,9 +18,6 @@
                     <p class="text-sm text-dark mb-0">{{ $pengguna->email }}</p>
                     <div class="mt-3">
                         <span class="badge bg-gradient-dark">{{ $pengguna->role }}</span>
-                        <span class="badge {{ $pengguna->type_char === 'Hero' ? 'bg-gradient-success' : 'bg-gradient-danger' }}">
-                            {{ $pengguna->type_char }}
-                        </span>
                     </div>
                     <div class="text-center my-2">
                         <h6 class="text-sm mb-1">Bergabung Sejak</h6>

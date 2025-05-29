@@ -71,25 +71,9 @@
                                         <input type="text" name="telepon" id="telepon" class="form-control" required>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="input-group input-group-outline mb-4">
-                                        <label for="makanan_fav" class="form-label">Makanan Favorit</label>
-                                        <input type="text" name="makanan_fav" id="makanan_fav" class="form-control"
-                                            required>
-                                    </div>
-                                </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="input-group input-group-outline mb-4">
-                                        <select name="type_char" id="type_char" class="form-control" required>
-                                            <option value="">Pilih Tipe Karakter</option>
-                                            <option value="Hero">Hero</option>
-                                            <option value="Villain">Villain</option>
-                                        </select>
-                                    </div>
-                                </div>
                                 <div class="col-md-6">
                                     <div class="input-group input-group-outline mb-4">
                                         <input type="file" name="photo" id="photo" class="form-control">

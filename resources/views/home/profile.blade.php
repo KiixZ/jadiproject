@@ -238,15 +238,6 @@
                                                         <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
                                                     @enderror
                                                 </div>
-                                                <div>
-                                                    <label class="block text-sm font-medium text-gray-700 mb-2">
-                                                        <i class="bi bi-egg-fried me-2 text-custom"></i>Makanan Favorit
-                                                    </label>
-                                                    <input type="text" name="makanan_fav"
-                                                        value="{{ Auth::user()->makanan_fav }}"
-                                                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-custom focus:border-custom transition duration-150">
-                                                </div>
-
                                             </div>
                                         </div>
 

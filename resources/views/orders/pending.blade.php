@@ -19,7 +19,7 @@
                             Pembayaran Sedang Diproses
                         </h1>
                         <p class="text-gray-600">
-                            Terima kasih <span class="font-bold">{{ explode(' ', Auth::user()->name)[0] }}</span> telah berbelanja di OkeeDins.<br>
+                            Terima kasih <span class="font-bold">{{ explode(' ', Auth::user()->name)[0] }}</span> telah berbelanja di AlfazaGrilled.<br>
                             Pembayaran Anda sedang diproses oleh Midtrans. Silakan cek status pembayaran secara berkala.
                         </p>
                     </div>

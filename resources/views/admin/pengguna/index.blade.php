@@ -25,7 +25,6 @@
                                         <th class="text-uppercase text-black-th text-xxs font-weight-bolder opacity-7 ps-2">Jenis Kelamin</th>
                                         <th class="text-uppercase text-black-th text-xxs font-weight-bolder opacity-7 ps-2">Tanggal Lahir</th>
                                         <th class="text-uppercase text-black-th text-xxs font-weight-bolder opacity-7 ps-2">Telepon</th>
-                                        <th class="text-uppercase text-black-th text-xxs font-weight-bolder opacity-7 ps-2">Makanan Favorit</th>
                                         <th class="text-center text-uppercase text-black-th text-xxs font-weight-bolder opacity-7">Tipe Karakter</th>
                                         <th class="text-center text-uppercase text-black-th text-xxs font-weight-bolder opacity-7">Tanggal Daftar</th>
                                         <th class="text-center text-uppercase text-black-th text-xxs font-weight-bolder opacity-7">Aksi</th>
@@ -64,9 +63,6 @@
                                             </td>
                                             <td>
                                                 <span class="text-secondary text-xs font-weight-bold">{{ $user->telepon }}</span>
-                                            </td>
-                                            <td>
-                                                <span class="text-secondary text-xs font-weight-bold">{{ $user->makanan_fav }}</span>
                                             </td>
                                             <td class="align-middle text-center text-sm">
                                                 <span class="badge badge-sm bg-gradient-{{ $user->type_char == 'Hero' ? 'success' : 'danger' }}">{{ $user->type_char }}</span>

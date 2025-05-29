@@ -94,7 +94,7 @@
                                             ORD-{{ str_pad($order->id, 5, '0', STR_PAD_LEFT) }}</span>
                                         <span class="mx-2">•</span>
                                         <span class="text-blue-950 font-medium"><i
-                                                class="bi bi-shop mr-1"></i>OkeeDins</span>
+                                                class="bi bi-shop mr-1"></i>AlfazaGrilled</span>
                                     </div>
                                 </div>
                                 <span class="px-3 py-1 rounded-full text-sm font-medium {{ $order->status_badge }}">

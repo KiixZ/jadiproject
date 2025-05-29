@@ -170,19 +170,16 @@
                     class="w-full sm:w-1/2 px-6 py-3 text-center border-2 border-custom text-custom font-semibold rounded-lg hover:bg-red-50 transition duration-200">
                     <i class="bi bi-arrow-left mr-2"></i>Kembali ke Daftar Pesanan
                 </a>
-                @if($order->status === 'delivered')
-                    @if($order->payment_method === 'transfer')
-                        <button type="button"
-                            onclick="openConfirmationModal('Transfer')"
-                            class="w-full sm:w-1/2 px-6 py-3 text-center bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition duration-200">
-                            <i class="bi bi-check-circle mr-2"></i>Konfirmasi Penerimaan
-                        </button>
-                    @elseif($order->payment_method === 'Cash on Delivery')
-                        <button type="button"
-                            onclick="openConfirmationModal('COD')"
-                            class="w-full sm:w-1/2 px-6 py-3 text-center bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition duration-200">
-                            <i class="bi bi-check-circle mr-2"></i>Konfirmasi Penerimaan
-                        </button>
+                @if($order->status === 'completed')
+                    @php
+                        $belumDiulas = $order->orderItems->filter(function($item) {
+                            return !$item->produk->ulasan->where('user_id', auth()->id())->count();
+                        });
+                    @endphp
+                    @if ($belumDiulas->count() > 0)
+                        <a href="{{ route('reviews.create', $order->id) }}" class="w-full sm:w-1/2 px-6 py-3 text-center border-2 border-custom text-custom font-semibold rounded-lg hover:bg-red-50 transition duration-200">
+                            Beri Ulasan dan Rating  <i class="bi bi-arrow-right mr-6"></i>
+                        </a>
                     @endif
                 @endif
             </div>

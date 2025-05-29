@@ -20,7 +20,7 @@
                         </h1>
                         <p class="text-gray-600">
                             Terima kasih <span class="font-bold">{{ explode(' ', Auth::user()->name)[0] }}</span> telah
-                            berbelanja di OkeeDins. Pesanan Anda sedang diproses.
+                            berbelanja di AlfazaGrilled. Pesanan Anda sedang diproses.
                         </p>
                     </div>
 

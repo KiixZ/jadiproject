@@ -111,10 +111,6 @@
                             <span>2</span>
                             Data Login
                         </li>
-                        <li class="formbold-step-menu3">
-                            <span>3</span>
-                            Konfirmasi
-                        </li>
                     </ul>
                 </div>
 
@@ -169,13 +165,6 @@
 
                     </div>
 
-                    <div>
-                        <label for="makanan_fav" class="formbold-form-label">Makanan Favorit <b
-                                style="color: red;">*</b></label>
-                        <input type="text" name="makanan_fav" id="makanan_fav" class="formbold-form-input"
-                            placeholder="Mandai, Bilungka, Kolak" required value="{{ old('makanan_fav') }}" />
-                    </div>
-                    <br>
                     <div>
                         <label for="address" class="formbold-form-label">Alamat Lengkap <b
                                 style="color: red;">*</b></label>
@@ -233,72 +222,6 @@
                     </div>
                 </div>
 
-                <div class="formbold-form-step-3">
-                    <div class="formbold-form-confirm">
-                        <h2 class="character-title">Pilih Karakter Yang Mencerminkan Dirimu!</h2>
-                        <input type="hidden" name="type_char" id="type_char" value="">
-
-                        <div class="character-selection">
-                            <div class="character-card" onclick="selectCharacter('Hero')" id="hero-card">
-                                <div class="character-image">
-                                    <img src="{{ asset('images/hero-character.png') }}" alt="Hero Character">
-                                    <div class="character-glow hero-glow"></div>
-                                </div>
-                                <div class="character-info">
-                                    <h3>Hero</h3>
-                                    <p>Pejuang kebenaran sejati</p>
-                                </div>
-                            </div>
-                            <div class="character-card" onclick="selectCharacter('Villain')" id="villain-card">
-                                <div class="character-image">
-                                    <img src="{{ asset('images/villain-character.png') }}" alt="Villain Character">
-                                    <div class="character-glow villain-glow"></div>
-                                </div>
-                                <div class="character-info">
-                                    <h3>Villain</h3>
-                                    <p>Penguasa kegelapan</p>
-                                </div>
-                            </div>
-                            <div class="character-card" onclick="selectCharacter('Anti Hero')" id="anti-hero-card">
-                                <div class="character-image">
-                                    <img src="{{ asset('images/anti_hero_char.png') }}" alt="Anti Hero Character">
-                                    <div class="character-glow anti-hero-glow"></div>
-                                </div>
-                                <div class="character-info">
-                                    <h3>Anti Hero</h3>
-                                    <p>Pahlawan berani berbeda</p>
-                                </div>
-                            </div>
-                            <div class="character-card" onclick="selectCharacter('Anti Villain')"
-                                id="anti-villain-card">
-                                <div class="character-image">
-                                    <img src="{{ asset('images/anti_villain_char.jpg') }}"
-                                        alt="Anti Villain Character">
-                                    <div class="character-glow anti-villain-glow"></div>
-                                </div>
-                                <div class="character-info">
-                                    <h3>Anti Villain</h3>
-                                    <p>Antagonis bermotif mulia</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="scroll-indicator">
-                            <span class="scroll-dot active"></span>
-                            <span class="scroll-dot"></span>
-                            <span class="scroll-dot"></span>
-                            <span class="scroll-dot"></span>
-                        </div>
-
-                        <div class="scroll-hint">
-                            Geser untuk melihat karakter lainnya
-                        </div>
-
-                    </div>
-                </div>
-
-
-                <!-- Hyperlink untuk login -->
                 <div class="formbold-form-btn-wrapper">
                     <p>Sudah punya akun?<a href="{{ route('login') }}" class="login-link"> Masuk disini</a></p>
 

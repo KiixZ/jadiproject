@@ -109,12 +109,10 @@
         <div class="border-t border-gray-100 mt-12 pt-8">
             <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                 <p class="text-sm text-gray-600">
-                    &copy; {{ date('Y') }} {{ $appSettings['app_name'] ?? 'AlfazaGrilled' }}. All rights reserved.
+                Dibuat oleh tim AlfazaGrilled di Tegal
                 </p>
-                <div class="flex items-center space-x-6">
-                    <a href="#" aria-label="Kebijakan Privasi" class="text-sm text-gray-600 hover:text-custom transition-colors">Kebijakan Privasi</a>
-                    <a href="#" aria-label="Syarat & Ketentuan" class="text-sm text-gray-600 hover:text-custom transition-colors">Syarat & Ketentuan</a>
-                    <a href="#" aria-label="FAQ" class="text-sm text-gray-600 hover:text-custom transition-colors">FAQ</a>
+                <div class="flex items-center space-x-6 text-sm text-gray-600">
+                &copy; {{ date('Y') }} {{ $appSettings['app_name'] ?? 'AlfazaGrilled' }}. All rights reserved.
                 </div>
             </div>
         </div>

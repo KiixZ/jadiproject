@@ -45,10 +45,8 @@ class User extends Authenticatable  implements MustVerifyEmail
         'tgl_lahir',
         'jenis_kelamin',
         'telepon',
-        'makanan_fav',
         'photo',
         'role',
-        'type_char',
         'email_changed',
         'password_changed',
         'last_login_ip'

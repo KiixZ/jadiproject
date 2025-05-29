@@ -38,8 +38,6 @@ class PenggunaController extends Controller
             'tgl_lahir' => 'required|date',
             'jenis_kelamin' => 'required',
             'telepon' => 'required',
-            'makanan_fav' => 'required',
-            'type_char' => 'required|in:Hero,Villain',
             'photo' => 'nullable|image|max:2048',
         ]);
 
@@ -58,9 +56,6 @@ class PenggunaController extends Controller
             'tgl_lahir' => $request->tgl_lahir,
             'jenis_kelamin' => $request->jenis_kelamin,
             'telepon' => $request->telepon,
-            'makanan_fav' => $request->makanan_fav,
-            'type_char' => $request->type_char,
-            'photo' => $photoPath, // Gunakan path foto yang sudah diupload
             'created_at' => now(),
             'updated_at' => now()
         ]);
@@ -88,8 +83,6 @@ class PenggunaController extends Controller
             'tgl_lahir' => 'required|date',
             'jenis_kelamin' => 'required',
             'telepon' => 'required',
-            'makanan_fav' => 'required',
-            'type_char' => 'required|in:Hero,Villain',
             'photo' => 'nullable|image|max:2048',
         ]);
 
@@ -101,8 +94,6 @@ class PenggunaController extends Controller
             'tgl_lahir' => $request->tgl_lahir,
             'jenis_kelamin' => $request->jenis_kelamin,
             'telepon' => $request->telepon,
-            'makanan_fav' => $request->makanan_fav,
-            'type_char' => $request->type_char,
             'updated_at' => now(),
         ];
 

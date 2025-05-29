@@ -221,10 +221,8 @@ $(document).ready(function () {
     const formSubmitBtn = $(".formbold-btn");
     const stepMenuOne = $(".formbold-step-menu1");
     const stepMenuTwo = $(".formbold-step-menu2");
-    const stepMenuThree = $(".formbold-step-menu3");
     const stepOne = $(".formbold-form-step-1");
     const stepTwo = $(".formbold-form-step-2");
-    const stepThree = $(".formbold-form-step-3");
     const formBackBtn = $(".formbold-back-btn");
     const emailInput = $("#email");
     const passwordInput = $("#password");
@@ -590,13 +588,6 @@ $(document).ready(function () {
             stepOne.addClass("active");
             formBackBtn.removeClass("active");
             formSubmitBtn.text("Selanjutnya");
-        } else if (stepMenuThree.hasClass("active")) {
-            stepMenuThree.removeClass("active");
-            stepMenuTwo.addClass("active");
-            stepThree.removeClass("active");
-            stepTwo.addClass("active");
-            formBackBtn.addClass("active");
-            formSubmitBtn.text("Selanjutnya");
         }
     });
 
@@ -612,7 +603,6 @@ $(document).ready(function () {
             const telepon = $("#telepon").val().trim();
             const tglLahir = $("#tgl_lahir").val().trim();
             const jenisKelamin = $('input[name="jenis_kelamin"]:checked').val();
-            const makananFav = $("#makanan_fav").val().trim();
             const address = $("#address").val().trim();
 
             //! Modify SweetAlert2Start Isian Nama Lengkap jika tidak di isi (secara Spesifik)
@@ -686,14 +676,6 @@ $(document).ready(function () {
 
             //! Modify SweetAlert2Start Isian Makanan Favorit jika tidak di isi (secara Spesifik)
             // Tambahkan pengecekan spesifik untuk Makanan Favorit
-            if (!makananFav) {
-                Swal.fire({
-                    icon: "warning",
-                    title: "Mohon Perhatian!",
-                    text: "Input Makanan Favoritmu!",
-                });
-                return;
-            }
 
             if (!address) {
                 Swal.fire({
@@ -705,13 +687,13 @@ $(document).ready(function () {
             }
 
             //!Start menampilkan SweetAlert2 jika ada kolom belum yg diisi (global/non-spesifik) dan ui Step Active
-            if (fullname && telepon && tglLahir && jenisKelamin && makananFav && address) {
+            if (fullname && telepon && tglLahir && jenisKelamin && address) {
                 stepMenuOne.removeClass("active");
                 stepMenuTwo.addClass("active");
                 stepOne.removeClass("active");
                 stepTwo.addClass("active");
                 formBackBtn.addClass("active");
-                formSubmitBtn.text("Selanjutnya");
+                formSubmitBtn.text("Daftar");
             } else {
                 Swal.fire({
                     icon: "warning",
@@ -775,151 +757,9 @@ $(document).ready(function () {
             }
 
             stepMenuTwo.removeClass("active");
-            stepMenuThree.addClass("active");
-            stepTwo.removeClass("active");
-            stepThree.addClass("active");
-            formBackBtn.addClass("active");
-            formSubmitBtn.text("GO! Daftar");
+            formSubmitBtn.text("Daftar");
             //! End Step Menu Kedua
 
-        } else if (stepMenuThree.hasClass("active")) {
-            const characterType = document.getElementById("type_char").value;
-
-            if (!characterType) {
-                Swal.fire({
-                    icon: "error",
-                    title: "Mohon Perhatian!",
-                    text: "Silakan pilih tipe karakter Anda!",
-                });
-                return;
-            }
-
-            else if (stepMenuThree.hasClass("active")) {
-                const characterType = document.getElementById("type_char").value;
-
-                if (!characterType) {
-                    Swal.fire({
-                        icon: "error",
-                        title: "Mohon Perhatian!",
-                        text: "Silakan pilih tipe karakter Anda!",
-                    });
-                    return;
-                }
-
-                // Dapatkan form
-                const form = $("form");
-
-                let isSubmitting = false;
-                // Submit form dengan AJAX
-                $.ajax({
-                    url: form.attr('action'),
-                    type: 'POST',
-                    data: form.serialize(),
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    beforeSend: function () {
-                        // Prevent double submission
-                        if (isSubmitting) {
-                            return false;
-                        }
-                        isSubmitting = true;
-
-                        // Disable semua button dan input selama proses
-                        $('button, input, select, textarea').prop('disabled', true);
-
-                        // Show loading dengan pesan yang informatif
-                        Swal.fire({
-                            title: 'Sedang Memproses...',
-                            html: `
-                                    <div class="loading-wrapper">
-                                    <div>Mohon tunggu sebentar</div>
-                                    </div>
-                            `,
-                            allowOutsideClick: false,
-                            allowEscapeKey: false,
-                            allowEnterKey: false,
-                            showConfirmButton: false,
-                            didOpen: () => {
-                                Swal.showLoading();
-                            }
-                        });
-                    },
-                    success: function (response) {
-                        if (response.success) {
-                            // Show success message
-                            Swal.fire({
-                                icon: 'success',
-                                title: 'Registrasi Berhasil!',
-                                html: `
-                                    <div class="success-wrapper">
-                                        <div>Anda akan diarahkan ke halaman login...</div>
-                                    </div>
-                                `,
-                                timer: 2000,
-                                showConfirmButton: false,
-                                allowOutsideClick: false,
-                                allowEscapeKey: false,
-                                didOpen: () => {
-                                    const b = Swal.getHtmlContainer().querySelector('.success-wrapper');
-                                    b.style.display = 'flex';
-                                    b.style.flexDirection = 'column';
-                                    b.style.gap = '10px';
-                                }
-                            }).then(() => {
-                                window.location.href = response.redirect || '/login';
-                            });
-                        } else {
-                            handleError('Terjadi kesalahan saat registrasi');
-                        }
-                    },
-                    error: function (xhr) {
-                        let errorMessage = 'Terjadi kesalahan saat registrasi';
-
-                        if (xhr.status === 422) {
-                            const errors = xhr.responseJSON.errors;
-                            if (errors) {
-                                errorMessage = Object.values(errors).flat().join('\n');
-                            }
-                        } else if (xhr.status === 0) {
-                            errorMessage = 'Koneksi terputus. Mohon periksa internet anda dan coba lagi.';
-                        } else if (xhr.status === 408) {
-                            errorMessage = 'Waktu proses terlalu lama. Mohon coba lagi.';
-                        }
-
-                        handleError(errorMessage);
-                    },
-                    complete: function () {
-                        // Reset submission status
-                        isSubmitting = false;
-                        // Re-enable semua button dan input
-                        $('button, input, select, textarea').prop('disabled', false);
-                    },
-                    timeout: 30000 // Set timeout 30 detik
-                });
-            }
-
-            // Tambahkan function ini di luar event handler (di level yang sama dengan kode jQuery lainnya)
-            function handleError(message) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Gagal!',
-                    html: `
-                        <div style="text-align: left;">
-                            <div style="margin-bottom: 10px;">${message}</div>
-                            <div style="font-size: 0.9em; color: #666;">
-                                Saran:
-                                <ul style="text-align: left; margin-top: 5px;">
-                                    <li>Periksa koneksi internet anda</li>
-                                    <li>Refresh halaman dan coba lagi</li>
-                                    <li>Jika masalah berlanjut, hubungi support</li>
-                                </ul>
-                            </div>
-                        </div>
-                    `,
-                    confirmButtonText: 'Coba Lagi'
-                });
-            }
         }
         return false; // Prevent default form submission
     });

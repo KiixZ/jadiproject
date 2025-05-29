@@ -343,20 +343,26 @@
                         <div class="grid grid-cols-1 md:grid-cols-12 gap-6 mb-6">
                             <!-- Left Column - Rating Overview -->
                             <div class="md:col-span-3 flex flex-col items-center justify-center">
-                                <div class="text-4xl font-bold text-gray-900 mb-2">4.9<span class="text-xl">/5</span>
+                                <div class="text-4xl font-bold text-gray-900 mb-2">
+                                    {{ number_format($product->rating, 1) }}<span class="text-xl">/5</span>
                                 </div>
                                 <div class="flex items-center text-yellow-400 mb-2">
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
-                                    <i class="bi bi-star-fill"></i>
+                                    @for ($i = 1; $i <= 5; $i++)
+                                        <i class="bi bi-star-fill {{ $i <= round($product->rating) ? 'text-yellow-400' : 'text-gray-300' }}"></i>
+                                    @endfor
                                 </div>
-                                <p class="text-sm text-gray-500">200 ulasan</p>
+                                <p class="text-sm text-gray-500">{{ $product->ulasan->count() }} ulasan</p>
                             </div>
 
                             <!-- Right Column - Rating Bars -->
                             <div class="md:col-span-9">
+                                @php
+                                    $totalUlasan = $product->ulasan->count();
+                                    $ratingCounts = [];
+                                    foreach (range(5, 1) as $star) {
+                                        $ratingCounts[$star] = $product->ulasan->where('rating', $star)->count();
+                                    }
+                                @endphp
                                 @foreach (range(5, 1) as $star)
                                 <div class="flex items-center mb-2 last:mb-0">
                                     <div class="flex items-center w-16">
@@ -365,9 +371,9 @@
                                     </div>
                                     <div class="flex-1 h-2.5 bg-gray-200 rounded-full mx-2">
                                         <div class="h-2.5 bg-yellow-400 rounded-full"
-                                            style="width: {{ rand(60, 95) }}%"></div>
+                                            style="width: {{ $totalUlasan > 0 ? ($ratingCounts[$star] / $totalUlasan) * 100 : 0 }}%"></div>
                                     </div>
-                                    <span class="text-sm text-gray-500 w-12 text-right">{{ rand(40, 150) }}</span>
+                                    <span class="text-sm text-gray-500 w-12 text-right">{{ $ratingCounts[$star] }}</span>
                                 </div>
                                 @endforeach
                             </div>
@@ -391,34 +397,31 @@
 
                         <!-- Review List -->
                         <div class="space-y-6">
-                            @foreach (range(1, 2) as $review)
+                            @forelse ($product->ulasan as $review)
                             <div class="border-b border-gray-200 pb-6 last:border-0">
                                 <div class="flex items-center mb-2">
                                     <img src="{{ asset('images/user.svg') }}" alt="User Avatar"
                                         class="w-10 h-10 rounded-full object-cover border border-gray-200">
                                     <div class="ml-3">
-                                        <p class="font-medium text-gray-900">User {{ $review }}</p>
+                                        <p class="font-medium text-gray-900">{{ $review->user->name ?? 'User' }}</p>
                                         <div class="flex items-center text-yellow-400">
-                                            @foreach (range(1, 5) as $star)
-                                            <i class="bi bi-star-fill text-sm"></i>
-                                            @endforeach
+                                            @for ($i = 1; $i <= 5; $i++)
+                                                <i class="bi bi-star-fill text-sm {{ $i <= $review->rating ? 'text-yellow-400' : 'text-gray-300' }}"></i>
+                                            @endfor
                                         </div>
                                     </div>
                                 </div>
                                 <p class="text-sm text-gray-500 mb-2">
-                                    {{ now()->subDays(rand(1, 30))->format('d M Y') }}
+                                    {{ \Carbon\Carbon::parse($review->created_at)->format('d M Y') }}
                                 </p>
                                 <p class="text-gray-600 mb-4">
-                                    Produk bagus, pengiriman cepat, packing aman. Recommended seller!
+                                    {{ $review->ulasan }}
                                 </p>
-                                <div class="flex flex-wrap gap-2">
-                                    @foreach (range(1, 2) as $img)
-                                    <img src="{{ asset('storage/' . $product->gambar) }}" alt="Review Image"
-                                        class="w-24 h-24 rounded-lg object-cover hover:opacity-90 transition-opacity cursor-pointer">
-                                    @endforeach
-                                </div>
+                                {{-- Jika ada gambar ulasan, tampilkan di sini --}}
                             </div>
-                            @endforeach
+                            @empty
+                            <p class="text-gray-500">Belum ada ulasan untuk produk ini.</p>
+                            @endforelse
                         </div>
 
                         <!-- Load More Button -->

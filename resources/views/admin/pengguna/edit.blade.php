@@ -104,34 +104,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="mb-4">
-                                        <label for="makanan_fav" class="mb-2">Makanan Favorit</label>
-                                        <div class="input-group input-group-outline">
-                                            <input type="text" name="makanan_fav" id="makanan_fav" class="form-control"
-                                                value="{{ $pengguna->makanan_fav }}" required>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
 
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="mb-4">
-                                        <label for="type_char" class="mb-2">Tipe Karakter</label>
-                                        <div class="input-group input-group-outline">
-                                            <select name="type_char" id="type_char" class="form-control" required>
-                                                <option value="Hero"
-                                                    {{ $pengguna->type_char == 'Hero' ? 'selected' : '' }}>
-                                                    Hero</option>
-                                                <option value="Villain"
-                                                    {{ $pengguna->type_char == 'Villain' ? 'selected' : '' }}>
-                                                    Villain
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div class="col-md-6">
                                     <div class="mb-4">
                                         <label for="photo" class="mb-2">Foto Profil</label>
