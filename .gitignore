@@ -23,5 +23,6 @@ Homestead.json
 .phpunit.result.cache
 /storage
 /storage/app
+/storage/*
 # windsurf rules
 .windsurfrules
